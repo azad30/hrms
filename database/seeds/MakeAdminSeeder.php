@@ -31,7 +31,7 @@ class MakeAdminSeeder extends Seeder
             'nid' => '23465546',
             'passport_number' => '23465546',
             'tin_number' => '23465546',
-            'permanent_address' => 'sfddhtyt',
+            'permanent_address' => 'badda',
             'emergency_contact' => 'sfddhtyt',
             'active' => 1,
 
