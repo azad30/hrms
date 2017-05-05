@@ -1,6 +1,6 @@
 <footer>
     <div class="pull-right">
-        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        {{ config('app.name', 'laravel') }} - Desigend by <a href="#">Lazy Programmer</a>
     </div>
     <div class="clearfix"></div>
 </footer>

@@ -22,7 +22,7 @@ class MakeAdminSeeder extends Seeder
             'dob' => Carbon::now(),
             'gender' => 'Male',
             'marital_status' => 'Single',
-            'religion' => 'Hindu',
+            'religion' => 'Hinduism',
             'occupation' => 'Student',
             'occupation_details' => 'MSc in CSE; Daffodil International University',
             'educational_qualification' => 'BSc in CSE',

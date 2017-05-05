@@ -16,8 +16,13 @@
     <link href="{{ asset('design/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- NProgress -->
     <link href="{{ asset('design/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
-    <!-- bootstrap-daterangepicker -->
-    <link href="{{ asset('design/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+
+
+
+    {{----}}
+    @yield('style')
+    {{----}}
+
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('design/build/css/custom.min.css') }}" rel="stylesheet">
@@ -40,11 +45,21 @@
         <!-- top navigation -->
         @include('common.header')
         <!-- /top navigation -->
+        <div class="right_col" role="main">
+            <div class="">
+                <!-- session alert -->
+                @include('common.session_alert')
+                <!-- /session alert -->
 
-        <!-- page content -->
-        @yield('content')
-        <!-- /page content -->
+                <!-- breadcrumbs -->
+                @include('common.breadcrumbs')
+                <!-- /breadcrumbs -->
 
+                <!-- page content -->
+                @yield('content')
+                <!-- /page content -->
+            </div>
+        </div>
         <!-- footer content -->
         @include('common.footer')
         <!-- /footer content -->
@@ -59,27 +74,21 @@
 <script src="{{ asset('design/vendors/fastclick/lib/fastclick.js') }}"></script>
 <!-- NProgress -->
 <script src="{{ asset('design/vendors/nprogress/nprogress.js') }}"></script>
-<!-- Chart.js -->
-<script src="{{ asset('design/vendors/Chart.js/dist/Chart.min.js') }}"></script>
-<!-- jQuery Sparklines -->
-<script src="{{ asset('design/vendors/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
-<!-- Flot -->
-<script src="{{ asset('design/vendors/Flot/jquery.flot.js') }}"></script>
-<script src="{{ asset('design/vendors/Flot/jquery.flot.pie.js') }}"></script>
-<script src="{{ asset('design/vendors/Flot/jquery.flot.time.js') }}"></script>
-<script src="{{ asset('design/vendors/Flot/jquery.flot.stack.js') }}"></script>
-<script src="{{ asset('design/vendors/Flot/jquery.flot.resize.js') }}"></script>
-<!-- Flot plugins -->
-<script src="{{ asset('design/vendors/flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
-<script src="{{ asset('design/vendors/flot-spline/js/jquery.flot.spline.min.js') }}"></script>
-<script src="{{ asset('design/vendors/flot.curvedlines/curvedLines.js') }}"></script>
-<!-- DateJS -->
-<script src="{{ asset('design/vendors/DateJS/build/date.js') }}"></script>
-<!-- bootstrap-daterangepicker -->
-<script src="{{ asset('design/vendors/moment/min/moment.min.js') }}"></script>
-<script src="{{ asset('design/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+
+
+{{----}}
+@yield('script')
+{{----}}
+
+
 
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('design/build/js/custom.min.js') }}"></script>
+
+<script>
+    $(".alert").fadeTo(2000, 500).slideUp(500, function(){
+        $(".alert").alert('close');
+    });
+</script>
 </body>
 </html>
