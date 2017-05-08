@@ -16,5 +16,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::resource('admin/role', 'Admin\\RoleController');
+Route::resource('admin/master_data', 'Admin\\Addresstype');
 Route::get('/test', 'HomeController@test');
-
+Route::get('/addresstype', 'HomeController@address');

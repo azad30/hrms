@@ -14,7 +14,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Roles </h2>
+                <h2>Names</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -34,14 +34,13 @@
             </div>
             <div class="x_content">
                 <div>
-                    <a href="{{ url('admin/role/create') }}" class="btn btn-primary btn-sm pull-right" title="Create Role">Create New Role <i class="fa fa-plus "></i></a>
+                    <a href="{{ url('admin/master_data/create') }}" class="btn btn-primary btn-sm pull-right" title="Create Name"> Create New Name <i class="fa fa-plus "></i></a>
                 </div>
                 <table id="datatable-buttons" class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th>SL#</th>
                         <th>Name</th>
-                        <th>Description</th>
                         <th>Created</th>
                         <th>Action</th>
 
@@ -49,40 +48,36 @@
                     </thead>
 
                     <tbody>
-                    @foreach($roles as $item)
+                    @foreach($address as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->description }}</td>
                         <td>{{ Carbon\Carbon::parse($item->created_at)->format('l jS F y') }}</td>
                         <td>
-                            <a href="{{ url('/admin/role/' . $item->id) }}" title="View Role"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                            <a href="{{ url('/admin/role/' . $item->id . '/edit') }}" title="Edit Role"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                            <a href="{{ url('/admin/master_data/' . $item->id) }}" title="View Name"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                            <a href="{{ url('/admin/master_data/' . $item->id . '/edit') }}" title="Edit Name"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                             {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['/admin/role', $item->id],
+                            'url' => ['/admin/master_data', $item->id],
                             'style' => 'display:inline'
                             ]) !!}
                             {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', array(
                             'type' => 'submit',
                             'class' => 'btn btn-danger btn-xs',
-                            'title' => 'Delete Role',
+                            'title' => 'Delete Name',
                             'onclick'=>'return confirm("Confirm Delete?")'
                             )) !!}
                             {!! Form::close() !!}
                         </td>
                     </tr>
                     @endforeach
-
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 @endsection
-
 @section('script')
-
     <!-- iCheck -->
     <script src="{{ asset('design/vendors/iCheck/icheck.min.js') }}"></script>
     <!-- Datatables -->
@@ -101,5 +96,4 @@
     <script src="{{ asset('design/vendors/jszip/dist/jszip.min.js') }}"></script>
     <script src="{{ asset('design/vendors/pdfmake/build/pdfmake.min.js') }}"></script>
     <script src="{{ asset('design/vendors/pdfmake/build/vfs_fonts.js') }}"></script>
-
 @endsection

@@ -119,4 +119,5 @@ class RoleController extends Controller
 
         return redirect('admin/role');
     }
+
 }

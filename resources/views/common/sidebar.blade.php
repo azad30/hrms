@@ -54,7 +54,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ url('/') }}">Address Types</a></li>
+                            <li><a href="{{ url('admin/master_data') }}">Address Types</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-user-secret "></i> Admin <span class="fa fa-chevron-down"></span></a>
