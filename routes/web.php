@@ -17,5 +17,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::resource('admin/role', 'Admin\\RoleController');
 Route::resource('admin/master_data', 'Admin\\Addresstype');
+Route::resource('admin/house_statement', 'Admin\\HouseStatement');
 Route::get('/test', 'HomeController@test');
-Route::get('/addresstype', 'HomeController@address');
+Route::get('/Addresstype', 'HomeController@address');

@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use App\Http\Controllers\Controller;
-use App\Role;
+use App\HouseModel;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class HouseController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -34,6 +34,6 @@ class HomeController extends Controller
         return view('test');
     }
     public function address(){
-        return view('admin.Addresstype', compact('roles'));
+        return view('admin.HouseStatement', compact('roles'));
     }
 }
