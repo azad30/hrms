@@ -33,7 +33,4 @@ class HomeController extends Controller
     {
         return view('test');
     }
-    public function address(){
-        return view('admin.Addresstype', compact('roles'));
-    }
 }

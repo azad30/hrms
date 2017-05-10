@@ -5,7 +5,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2><a class="btn btn-warning btn-xs" href="{{ url('/house/my_house') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Create House</h2>
+                <h2><a class="btn btn-warning btn-xs" href="{{ url('/house/my_house') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Create My House</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>

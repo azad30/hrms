@@ -14,7 +14,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>My Houses</h2>
+                <h2>My Flats</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -34,14 +34,15 @@
             </div>
             <div class="x_content">
                 <div>
-                    <a href="{{ url('house/my_house/create') }}" class="btn btn-primary btn-sm pull-right" title="Create House Name"> Create New House <i class="fa fa-plus "></i></a>
+                    <a href="{{ url('house/my_flat/create') }}" class="btn btn-primary btn-sm pull-right" title="Create Flat Statement"> Create New Flat <i class="fa fa-plus "></i></a>
                 </div>
                 <table id="datatable-buttons" class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th>SL#</th>
-                        <th>House NO</th>
-                        <th>House Name</th>
+                        <th>Flat Name</th>
+                        <th>House No</th>
+                        <th>Flat Description</th>
                         <th>Created</th>
                         <th>Action</th>
 
@@ -49,24 +50,25 @@
                     </thead>
 
                     <tbody>
-                    @foreach($address as $item)
+                    @foreach($flat as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->house_no }}</td>
                         <td>{{ $item->name }}</td>
+                        <td>{{ $item->house->house_no }}</td>
+                        <td>{{ $item->description }}</td>
                         <td>{{ Carbon\Carbon::parse($item->created_at)->format('l jS F y') }}</td>
                         <td>
-                            <a href="{{ url('/house/my_house/' . $item->id) }}" title="View House Name"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                            <a href="{{ url('/house/my_house/' . $item->id . '/edit') }}" title="Edit House Name"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                            <a href="{{ url('/house/my_flat/' . $item->id) }}" title="View Flat"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                            <a href="{{ url('/house/my_flat/' . $item->id . '/edit') }}" title="Edit Flat"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                             {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['/house/my_house', $item->id],
+                            'url' => ['/house/my_flat', $item->id],
                             'style' => 'display:inline'
                             ]) !!}
                             {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', array(
                             'type' => 'submit',
                             'class' => 'btn btn-danger btn-xs',
-                            'title' => 'Delete House',
+                            'title' => 'Delete Flat!',
                             'onclick'=>'return confirm("Confirm Delete?")'
                             )) !!}
                             {!! Form::close() !!}

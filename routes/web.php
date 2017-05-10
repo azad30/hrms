@@ -25,7 +25,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('admin/role', 'Admin\\RoleController');
     Route::resource('master_data/address_type', 'MasterData\\AddressTypeController');
     Route::resource('house/my_house', 'House\\MyHouseController');
+    Route::resource('house/my_flat', 'House\\MyFlatController');
 
 });
 Route::get('/test', 'HomeController@test');
-Route::get('/Addresstype', 'HomeController@address');
