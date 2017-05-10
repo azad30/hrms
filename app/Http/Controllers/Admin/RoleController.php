@@ -44,7 +44,8 @@ class RoleController extends Controller
         $request->request->add(['user_id' => Auth::user()->id]);
         $this->validate($request, [
             'name' => 'required|max:255|unique:roles,name',
-            'description' => 'max:500'
+            'description' => 'max:500',
+            'user_id' => 'required'
         ]);
         Role::create($request->all());
 
@@ -94,7 +95,8 @@ class RoleController extends Controller
         $request->request->add(['user_id' => Auth::user()->id]);
         $this->validate($request, [
             'name' => 'required|max:255',
-            'description' => 'max:500'
+            'description' => 'max:500',
+            'user_id' => 'required'
         ]);
         $role = Role::findOrFail($id);
         $role->update($request->all());

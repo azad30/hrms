@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HouseModel extends Model
+class House extends Model
 {
     protected $table = 'house';
     /**
@@ -18,9 +18,9 @@ class HouseModel extends Model
      *
      * @var array
      */
-    protected $fillable = ['house_no','name','description','user_id'];
+    protected $fillable = ['house_no','name','description','user_id', 'owner_id', 'address_id' ];
 
-    public function house()
+    public function user()
     {
         return $this->belongsTo('App\User');
     }

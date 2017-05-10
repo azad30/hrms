@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Address_type extends Model
+class AddressType extends Model
 {
-    protected $table = 'Address_type';
+    protected $table = 'address_type';
     /**
      * The database primary key value.
      *

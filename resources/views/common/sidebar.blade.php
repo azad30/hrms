@@ -26,13 +26,13 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                     <li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                    <li><a><i class="fa fa-building  "></i> Houses <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-building  "></i> House <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{ url('/') }}">Houses</a></li>
-                            <li><a href="{{ url('/') }}">Flats</a></li>
+                            <li><a href="{{ url('/house/my_house') }}">My House</a></li>
+                            <li><a href="{{ url('/') }}">My Flat</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-home"></i> Rents <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-home"></i> Rent <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{ url('/') }}">Rents</a></li>
                         </ul>
@@ -44,8 +44,11 @@
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-database"></i> Master Data <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a>Addresses<span class="fa fa-chevron-down"></span></a>
+                            <li><a>Address<span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
+                                    {{--@foreach ($shareAddressTypes as $shareAddressType)--}}
+                                        {{--<li><a href="{{ url('/') }}">{{ $shareAddressType->name }}</a>--}}
+                                    {{--@endforeach--}}
                                     <li class="sub_menu"><a href="{{ url('/') }}">address 1</a>
                                     </li>
                                     <li><a href="{{ url('/') }}">address 2</a>
@@ -54,14 +57,14 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ url('admin/master_data') }}">Address Types</a></li>
+                            <li><a href="{{ url('master_data/address_type') }}">Address Type</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-user-secret "></i> Admin <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{ url('/') }}">Users</a></li>
-                            <li><a href="{{ url('admin/role') }}">Roles</a></li>
-                            <li><a href="{{ url('/') }}">User Roles</a></li>
+                            <li><a href="{{ url('/') }}">User</a></li>
+                            <li><a href="{{ url('admin/role') }}">Role</a></li>
+                            <li><a href="{{ url('/') }}">User Role</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-cog "></i> Settings <span class="fa fa-chevron-down"></span></a>

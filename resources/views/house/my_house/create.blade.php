@@ -1,10 +1,11 @@
 @extends('layouts.app')
+
 @section('content')
     <div class="clearfix"></div>
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2><a class="btn btn-warning btn-xs" href="{{ url('/admin/house_statement') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Edit House Name - {{ $address->id }}</h2>
+                <h2><a class="btn btn-warning btn-xs" href="{{ url('/house/my_house') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Create House</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -34,19 +35,20 @@
                     </div>
                     <hr/>
                 @endif
-            {!! Form::model($address, [
-                'method' => 'PATCH',
-                'url' => ['/admin/house_statement', $address->id],
-                'class' => 'form-horizontal',
-                'files' => true
-            ]) !!}
-            @include ('admin.house_statement.form', ['submitButtonText' => 'Update'])
-            {!! Form::close() !!}
+                {!! Form::open(['url' => '/house/my_house', 'class' => 'form-horizontal form-label-left', 'novalidate']) !!}
+
+                    @include ('house.my_house.form')
+
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
 @endsection
+
 @section('script')
+
     <!-- validator -->
     <script src="{{ asset('design/vendors/validator/validator.js') }}"></script>
+
+
 @endsection

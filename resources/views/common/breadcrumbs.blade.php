@@ -9,12 +9,12 @@
         @foreach(Request::segments() as $segment)
             @if(count(Request::segments()) == $key)
                 <li class="active" style="text-transform: capitalize;">
-                    {{ Request::segment($key) }}
+                    {{ str_replace('_', ' ', Request::segment($key)) }}
                 </li>
             @else
                 <li>
                     <a style="text-transform: capitalize;" href="{{ url('/') }}@for($i = 1; $i <= $key; $i++)/{{Request::segment($i)}}@endfor">
-                        {{ Request::segment($key) }}
+                        {{ str_replace('_', ' ', Request::segment($key)) }}
                     </a>
                 </li>
             @endif

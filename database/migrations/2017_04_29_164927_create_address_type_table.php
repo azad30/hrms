@@ -15,7 +15,7 @@ class CreateAddressTypeTable extends Migration
     {
         Schema::create('address_type', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 500);
+            $table->string('name', 250);
 
             $table->timestamps();
         });

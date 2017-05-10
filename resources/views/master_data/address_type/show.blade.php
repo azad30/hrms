@@ -4,7 +4,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                {{--<h2>View Role - {{ $role->id }}</h2>--}}
+                <h2>View Address Type - {{ $address->id }}</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -23,17 +23,17 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <a href="{{ url('/admin/master_data') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i></button></a>
-                <a href="{{ url('/admin/master_data/' . $address->id . '/edit') }}" title="Edit Name"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                <a href="{{ url('/master_data/address_type') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i></button></a>
+                <a href="{{ url('/master_data/address_type/' . $address->id . '/edit') }}" title="Edit Name"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                 {!! Form::open([
                     'method'=>'DELETE',
-                    'url' => ['/admin/master_data', $address->id],
+                    'url' => ['/master_data/address_type', $address->id],
                     'style' => 'display:inline'
                 ]) !!}
                 {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', array(
                         'type' => 'submit',
                         'class' => 'btn btn-danger btn-xs',
-                        'title' => 'Delete Name',
+                        'title' => 'Delete Address Type',
                         'onclick'=>'return confirm("Confirm Delete?")'
                 ))!!}
                 {!! Form::close() !!}

@@ -12,11 +12,20 @@
 */
 
 Auth::routes();
+Route::group(['middleware' => ['web', 'auth']], function () {
 
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index');
-Route::resource('admin/role', 'Admin\\RoleController');
-Route::resource('admin/master_data', 'Admin\\Addresstype');
-Route::resource('admin/house_statement', 'Admin\\HouseStatement');
+    Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
+
+    /*
+     * ******************
+     * CRUDs
+     * ******************
+     */
+    Route::resource('admin/role', 'Admin\\RoleController');
+    Route::resource('master_data/address_type', 'MasterData\\AddressTypeController');
+    Route::resource('house/my_house', 'House\\MyHouseController');
+
+});
 Route::get('/test', 'HomeController@test');
 Route::get('/Addresstype', 'HomeController@address');

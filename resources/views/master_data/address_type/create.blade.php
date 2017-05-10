@@ -5,7 +5,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2><a class="btn btn-warning btn-xs" href="{{ url('/admin/master_data') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Create Name</h2>
+                <h2><a class="btn btn-warning btn-xs" href="{{ url('/master_data/address_type') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Create Name</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -35,9 +35,9 @@
                     </div>
                     <hr/>
                 @endif
-                {!! Form::open(['url' => '/admin/master_data', 'class' => 'form-horizontal form-label-left', 'novalidate']) !!}
+                {!! Form::open(['url' => 'master_data/address_type', 'class' => 'form-horizontal form-label-left', 'novalidate']) !!}
 
-                    @include ('admin.master_data.form')
+                    @include ('master_data.address_type.form')
 
                 {!! Form::close() !!}
             </div>

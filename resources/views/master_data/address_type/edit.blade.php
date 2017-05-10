@@ -4,7 +4,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2><a class="btn btn-warning btn-xs" href="{{ url('/admin/master_data') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Edit Name - {{ $address->id }}</h2>
+                <h2><a class="btn btn-warning btn-xs" href="{{ url('/master_data/address_type') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Edit Address Type - {{ $address->id }}</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -36,11 +36,11 @@
                 @endif
             {!! Form::model($address, [
                 'method' => 'PATCH',
-                'url' => ['/admin/master_data', $address->id],
+                'url' => ['/master_data/address_type', $address->id],
                 'class' => 'form-horizontal',
                 'files' => true
             ]) !!}
-            @include ('admin.master_data.form', ['submitButtonText' => 'Update'])
+            @include ('master_data.address_type.form', ['submitButtonText' => 'Update'])
             {!! Form::close() !!}
             </div>
         </div>

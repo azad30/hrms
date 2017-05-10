@@ -34,13 +34,14 @@
             </div>
             <div class="x_content">
                 <div>
-                    <a href="{{ url('admin/master_data/create') }}" class="btn btn-primary btn-sm pull-right" title="Create Name"> Create New Name <i class="fa fa-plus "></i></a>
+                    <a href="{{ url('house/my_house/create') }}" class="btn btn-primary btn-sm pull-right" title="Create House Name"> Create New House <i class="fa fa-plus "></i></a>
                 </div>
                 <table id="datatable-buttons" class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th>SL#</th>
-                        <th>Name</th>
+                        <th>House NO</th>
+                        <th>House Name</th>
                         <th>Created</th>
                         <th>Action</th>
 
@@ -51,20 +52,21 @@
                     @foreach($address as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item->house_no }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ Carbon\Carbon::parse($item->created_at)->format('l jS F y') }}</td>
                         <td>
-                            <a href="{{ url('/admin/master_data/' . $item->id) }}" title="View Name"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                            <a href="{{ url('/admin/master_data/' . $item->id . '/edit') }}" title="Edit Name"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                            <a href="{{ url('/house/my_house/' . $item->id) }}" title="View House Name"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                            <a href="{{ url('/house/my_house/' . $item->id . '/edit') }}" title="Edit House Name"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                             {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['/admin/master_data', $item->id],
+                            'url' => ['/house/my_house', $item->id],
                             'style' => 'display:inline'
                             ]) !!}
                             {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', array(
                             'type' => 'submit',
                             'class' => 'btn btn-danger btn-xs',
-                            'title' => 'Delete Name',
+                            'title' => 'Delete House',
                             'onclick'=>'return confirm("Confirm Delete?")'
                             )) !!}
                             {!! Form::close() !!}
