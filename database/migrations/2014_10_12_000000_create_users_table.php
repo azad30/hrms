@@ -33,7 +33,7 @@ class CreateUsersTable extends Migration
             $table->string('passport_number', 50)->nullable();
             $table->string('tin_number', 50)->nullable();
             $table->string('permanent_address', 500);
-            $table->string('emergency_contact', 100);
+            $table->string('emergency_contact', 100)->nullable();
             $table->tinyInteger('active');
 
             $table->integer('updated_by')->nullable()->unsigned();

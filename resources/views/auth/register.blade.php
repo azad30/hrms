@@ -122,7 +122,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('educational_qualification') ? ' has-error' : '' }}">
-                        <textarea name="educational_qualification" class="form-control" rows="5" placeholder="Educational Qualification" required="">{{ old('educational_qualification') }}</textarea>
+                        <textarea name="educational_qualification" class="form-control" rows="5" placeholder="Educational Qualification" >{{ old('educational_qualification') }}</textarea>
                         @if ($errors->has('educational_qualification'))
                             <span class="help-block">
                                     <strong>{{ $errors->first('educational_qualification') }}</strong>
@@ -146,7 +146,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('passport_number') ? ' has-error' : '' }}">
-                        <input name="passport_number"  type="text" class="form-control" value="{{ old('passport_number') }}" placeholder="Passport Number" required="" />
+                        <input name="passport_number"  type="text" class="form-control" value="{{ old('passport_number') }}" placeholder="Passport Number" />
                         @if ($errors->has('passport_number'))
                             <span class="help-block">
                                     <strong>{{ $errors->first('passport_number') }}</strong>
@@ -154,7 +154,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('tin_number') ? ' has-error' : '' }}">
-                        <input name="tin_number"  type="text" class="form-control" value="{{ old('tin_number') }}" placeholder="Tin Number" required="" />
+                        <input name="tin_number"  type="text" class="form-control" value="{{ old('tin_number') }}" placeholder="Tin Number" />
                         @if ($errors->has('tin_number'))
                             <span class="help-block">
                                     <strong>{{ $errors->first('tin_number') }}</strong>
@@ -162,7 +162,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('permanent_address') ? ' has-error' : '' }}">
-                        <textarea name="permanent_address" class="form-control" rows="5" placeholder="Permanent Address" required="">{{ old('permanent_address') }}</textarea>
+                        <textarea name="permanent_address" class="form-control" rows="5" placeholder="Permanent Address">{{ old('permanent_address') }}</textarea>
                         @if ($errors->has('permanent_address'))
                             <span class="help-block">
                                     <strong>{{ $errors->first('permanent_address') }}</strong>
@@ -170,7 +170,7 @@
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('emergency_contact') ? ' has-error' : '' }}">
-                        <input name="emergency_contact"  type="text" class="form-control" value="{{ old('emergency_contact') }}" placeholder="Emergency Contact" required="" />
+                        <input name="emergency_contact"  type="text" class="form-control" value="{{ old('emergency_contact') }}" placeholder="Emergency Contact" />
                         @if ($errors->has('emergency_contact'))
                             <span class="help-block">
                                     <strong>{{ $errors->first('emergency_contact') }}</strong>

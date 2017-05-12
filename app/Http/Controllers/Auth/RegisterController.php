@@ -60,13 +60,13 @@ class RegisterController extends Controller
             'religion' => 'required',
             'occupation' => 'required|string|max:50',
             'occupation_details' => 'required|string|max:500',
-            'educational_qualification' => 'string|max:500',
-            'phone_number' => 'max:100',
+            'educational_qualification' => 'max:500',
+            'phone_number' => 'required|max:100',
             'nid' => 'string|required|max:50|unique:users',
-            'passport_number' => 'string|max:50',
-            'tin_number' => 'string|max:50',
+            'passport_number' => 'max:50',
+            'tin_number' => 'max:50',
             'permanent_address' => 'required|string|max:500',
-            'emergency_contact' => 'required|string|max:100',
+            'emergency_contact' => 'max:100',
         ]);
     }
 

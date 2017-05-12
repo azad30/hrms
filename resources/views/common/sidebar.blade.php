@@ -30,11 +30,14 @@
                         <ul class="nav child_menu">
                             <li><a href="{{ url('/house/my_house') }}">My House</a></li>
                             <li><a href="{{ url('/house/my_flat') }}">My Flat</a></li>
+                            <li><a href="{{ url('/house/renter') }}">Renter</a></li>
+                            <li><a href="{{ url('/') }}">Previous Renter</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-home"></i> Rent <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{ url('/') }}">Rents</a></li>
+                            <li><a href="{{ url('/my_renting') }}">My Renting</a></li>
+                            <li><a href="{{ url('/') }}">Previous Renting</a></li>
                         </ul>
                     </li>
                 </ul>
