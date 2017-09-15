@@ -23,10 +23,12 @@ Route::group(['middleware' => ['web', 'auth']], function () {
      * ******************
      */
     Route::resource('admin/role', 'Admin\\RoleController');
+    Route::resource('admin/user_role', 'Admin\\UserRoleController');
     Route::resource('master_data/address_type', 'MasterData\\AddressTypeController');
     Route::resource('house/my_house', 'House\\MyHouseController');
     Route::resource('house/my_flat', 'House\\MyFlatController');
     Route::resource('house/renter', 'House\\RenterController');
+    Route::resource('rent/my_renting', 'Rent\\RentController');
 
 });
 Route::get('/test', 'HomeController@test');

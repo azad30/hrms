@@ -1,10 +1,11 @@
 @extends('layouts.app')
+
 @section('content')
     <div class="clearfix"></div>
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2><a class="btn btn-warning btn-xs" href="{{ url('/house/renter') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Edit Renter Information - {{ $rent->id }}</h2>
+                <h2><a class="btn btn-warning btn-xs" href="{{ url('/admin/user_role') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Create User Role</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -34,19 +35,20 @@
                     </div>
                     <hr/>
                 @endif
-            {!! Form::model($rent, [
-                'method' => 'PATCH',
-                'url' => ['/house/renter', $rent->id],
-                'class' => 'form-horizontal',
-                'files' => true
-            ]) !!}
-            @include ('house.renter.form', ['submitButtonText' => 'Update'])
-            {!! Form::close() !!}
+                {!! Form::open(['url' => '/admin/user_role', 'class' => 'form-horizontal form-label-left', 'novalidate']) !!}
+
+                    @include ('admin.user_role.form')
+
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
 @endsection
+
 @section('script')
+
     <!-- validator -->
     <script src="{{ asset('design/vendors/validator/validator.js') }}"></script>
+
+
 @endsection

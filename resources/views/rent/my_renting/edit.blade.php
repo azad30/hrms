@@ -4,7 +4,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2><a class="btn btn-warning btn-xs" href="{{ url('/house/renter') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Edit Renter Information - {{ $rent->id }}</h2>
+                <h2><a class="btn btn-warning btn-xs" href="{{ url('/rent/my_renting') }}" title="Back" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i></a> - Edit My Renting - {{ $rent->id }}</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -36,11 +36,11 @@
                 @endif
             {!! Form::model($rent, [
                 'method' => 'PATCH',
-                'url' => ['/house/renter', $rent->id],
+                'url' => ['/rent/my_renting', $rent->id],
                 'class' => 'form-horizontal',
                 'files' => true
             ]) !!}
-            @include ('house.renter.form', ['submitButtonText' => 'Update'])
+            @include ('rent.my_renting.form', ['submitButtonText' => 'Update'])
             {!! Form::close() !!}
             </div>
         </div>

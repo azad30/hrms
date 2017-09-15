@@ -14,7 +14,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Renters</h2>
+                <h2>User Roles</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -34,47 +34,44 @@
             </div>
             <div class="x_content">
                 <div>
-                    <a href="{{ url('house/renter/create') }}" class="btn btn-primary btn-sm pull-right" title="Create Renter Statement"> Create New Renter <i class="fa fa-plus "></i></a>
+                    <a href="{{ url('admin/user_role/create') }}" class="btn btn-primary btn-sm pull-right" title="Create User Role"> Create User Role <i class="fa fa-plus "></i></a>
                 </div>
                 <table id="datatable-buttons" class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th>SL#</th>
-                        <th>House No</th>
-                        <th>Flat Name</th>
-                        <th>Renter Name</th>
-                        <th>Start Date</th>
-                        <th>Approve</th>
+                        <th>User Name</th>
+                        <th>User Role</th>
+                        <th>Created</th>
                         <th>Action</th>
+
                     </tr>
                     </thead>
 
                     <tbody>
-                    @foreach($renters as $item)
+                    @foreach($role as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->flat->house->house_no }}</td>
-                        <td>{{ $item->flat->name }}</td>
                         <td>{{ $item->user->name }}</td>
-                        <td>{{ Carbon\Carbon::parse($item->start_date)->format('l jS F y') }}</td>
-                        <td class="{{ ($item->renter_approve == 1) ? 'bg-success' : 'bg-danger' }}">{{ ($item->renter_approve == 1) ? 'Yes' : 'No' }}</td>
+                        <td>{{ $item->user_role->name }}</td>
+                        <td>{{ Carbon\Carbon::parse($item->created_at)->format('l jS F y') }}</td>
                         <td>
-                            <a href="{{ url('/house/renter/'.$item->id) }}" title="View Flat"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                            <a href="{{ url('/house/renter/'.$item->id.'/edit') }}" title="Edit Flat"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                            <a href="{{ url('/admin/user_role/' . $item->id) }}" title="View User Role"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                            <a href="{{ url('/admin/user_role/' . $item->id . '/edit') }}" title="Edit User Role"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                             {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['/house/renter', $item->id],
+                            'url' => ['/admin/user_role/', $item->id],
                             'style' => 'display:inline'
                             ]) !!}
                             {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>', array(
                             'type' => 'submit',
                             'class' => 'btn btn-danger btn-xs',
-                            'title' => 'Delete Renter Information!',
+                            'title' => 'Delete User Role!',
                             'onclick'=>'return confirm("Confirm Delete?")'
                             )) !!}
                             {!! Form::close() !!}
                         </td>
-                      </tr>
+                    </tr>
                     @endforeach
                     </tbody>
                 </table>

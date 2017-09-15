@@ -36,7 +36,7 @@
                     </li>
                     <li><a><i class="fa fa-home"></i> Rent <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{ url('/my_renting') }}">My Renting</a></li>
+                            <li><a href="{{ url('rent/my_renting') }}">My Renting</a></li>
                             <li><a href="{{ url('/') }}">Previous Renting</a></li>
                         </ul>
                     </li>
@@ -52,11 +52,23 @@
                                     {{--@foreach ($shareAddressTypes as $shareAddressType)--}}
                                         {{--<li><a href="{{ url('/') }}">{{ $shareAddressType->name }}</a>--}}
                                     {{--@endforeach--}}
-                                    <li class="sub_menu"><a href="{{ url('/') }}">address 1</a>
+                                    <li class="sub_menu"><a href="{{ url('/') }}">Country</a>
                                     </li>
-                                    <li><a href="{{ url('/') }}">address 2</a>
+                                    <li><a href="{{ url('/') }}">Division</a>
                                     </li>
-                                    <li><a href="{{ url('/') }}">address 3</a>
+                                    <li><a href="{{ url('/') }}">District</a>
+                                    </li>
+                                    <li><a href="{{ url('/') }}">Subdistrict</a>
+                                    </li>
+                                    <li><a href="{{ url('/') }}">Police Station</a>
+                                    </li>
+                                    <li><a href="{{ url('/') }}">Post Office</a>
+                                    </li>
+                                    <li><a href="{{ url('/') }}">Postal Code</a>
+                                    </li>
+                                    <li><a href="{{ url('/') }}">Village / Area / Sector</a>
+                                    </li>
+                                    <li><a href="{{ url('/') }}">Road Number</a>
                                     </li>
                                 </ul>
                             </li>
@@ -67,7 +79,7 @@
                         <ul class="nav child_menu">
                             <li><a href="{{ url('/') }}">User</a></li>
                             <li><a href="{{ url('admin/role') }}">Role</a></li>
-                            <li><a href="{{ url('/') }}">User Role</a></li>
+                            <li><a href="{{ url('/admin/user_role') }}">User Role</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-cog "></i> Settings <span class="fa fa-chevron-down"></span></a>

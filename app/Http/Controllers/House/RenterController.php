@@ -42,7 +42,7 @@ class RenterController extends Controller
             $house->where('owner_id', '=',  Auth::user()->id);
             })
             ->pluck('name', 'id');
-        $renters = User::whereNotIn('id', [Auth::user()->id])->pluck('name', 'id');
+        $renters = User::where('id', [Auth::user()->id])->pluck('name', 'id');
         return view('house.renter.create', compact('houses', 'flats', 'renters'));
     }
 
@@ -58,7 +58,7 @@ class RenterController extends Controller
         $request->request->add(['owner_approve' => 1]);
         $this->validate($request, [
             'flat_id' => 'required',
-            'renter_id' => 'required',
+             'renter_id' => 'required',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date',
             'user_id' => 'required'
@@ -95,7 +95,7 @@ class RenterController extends Controller
             $house->where('owner_id', '=',  Auth::user()->id);
         })
             ->pluck('name', 'id');
-        $renters = User::whereNotIn('id', [Auth::user()->id])->pluck('name', 'id');
+        $renters = User::where('id', [Auth::user()->id])->pluck('name', 'id');
 
         return view('house.renter.edit', compact('rent', 'houses', 'flats', 'renters'));
 
